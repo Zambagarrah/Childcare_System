@@ -1,0 +1,8 @@
+Step 1: Initialize React Project with Vite + Yarn
+Step 2: Install React Router
+Step 3: Create Folder Structure
+Step 4: Set Up Routing
+    Defines routes for Home, Login, and Register
+Step 5: Home Page
+    Welcomes users with mission statement and CTA
+    Links to Register page
