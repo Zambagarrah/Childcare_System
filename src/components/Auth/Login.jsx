@@ -10,7 +10,7 @@ export default function Login() {
     const user = JSON.parse(localStorage.getItem(username));
     if (user && user.password === password) {
       alert(`Welcome, ${user.role}!`);
-      window.location.href = `/${user.role}-dashboard`;
+      window.location.href = '/parent-dashboard';
     } else {
       alert('Invalid credentials.');
     }
