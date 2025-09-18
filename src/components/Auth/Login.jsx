@@ -11,6 +11,7 @@ export default function Login() {
     if (user && user.password === password) {
       alert(`Welcome, ${user.role}!`);
       window.location.href = '/parent-dashboard';
+      window.location.href = '/caregiver-dashboard';
     } else {
       alert('Invalid credentials.');
     }
