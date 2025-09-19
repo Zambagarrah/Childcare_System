@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 
-// Dummy class roster
 const initialRoster = [
   { name: 'Amani Njeri', present: false, notes: '' },
   { name: 'Brian Otieno', present: false, notes: '' },
@@ -11,14 +10,12 @@ const initialRoster = [
 export default function CaregiverDashboard() {
   const [roster, setRoster] = useState(initialRoster);
 
-  // Toggle attendance
   const toggleAttendance = (index) => {
     const updated = [...roster];
     updated[index].present = !updated[index].present;
     setRoster(updated);
   };
 
-  // Update health notes
   const updateNotes = (index, value) => {
     const updated = [...roster];
     updated[index].notes = value;
@@ -28,14 +25,13 @@ export default function CaregiverDashboard() {
   return (
     <>
       <Navbar role="caregiver" />
-      <main style={{ padding: '2rem' }}>
-        <h2>Caregiver Dashboard</h2>
+      <main>
+        <h2 style={{ color: 'var(--color-primary)' }}>Caregiver Dashboard</h2>
 
-        {/* Class Roster */}
         <section>
           <h3>Today's Class</h3>
           {roster.map((child, index) => (
-            <div key={index} style={{ marginBottom: '1rem', borderBottom: '1px solid #ccc', paddingBottom: '1rem' }}>
+            <div key={index} style={{ marginBottom: '1rem' }}>
               <p><strong>Name:</strong> {child.name}</p>
               <label>
                 <input
@@ -55,11 +51,11 @@ export default function CaregiverDashboard() {
                   placeholder="e.g. sleepy, energetic"
                 />
               </label>
-              <a href="/attendance">
-                <button>Open Attendance Tracker</button>
-              </a>
             </div>
           ))}
+          <a href="/attendance">
+            <button>Open Attendance Tracker</button>
+          </a>
         </section>
       </main>
     </>

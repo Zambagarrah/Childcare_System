@@ -1,7 +1,5 @@
-import React from 'react';
 import Navbar from '../Navbar/Navbar';
 
-// Dummy data for demonstration
 const stats = {
   totalChildren: 42,
   totalCaregivers: 5,
@@ -11,18 +9,17 @@ const stats = {
 const staffList = [
   { name: 'Ms. Wanjiku', role: 'Caregiver' },
   { name: 'Mr. Otieno', role: 'Caregiver' },
-  { name: 'Admin Marianna', role: 'Administrator' },
+  { name: 'Admin Zablon', role: 'Administrator' },
 ];
 
 export default function AdminDashboard() {
   return (
     <>
       <Navbar role="admin" />
-      <main style={{ padding: '2rem' }}>
-        <h2>Admin Dashboard</h2>
+      <main>
+        <h2 style={{ color: 'var(--color-primary)' }}>Admin Dashboard</h2>
 
-        {/* Center-wide Stats */}
-        <section style={{ marginBottom: '2rem' }}>
+        <section>
           <h3>Center Overview</h3>
           <ul>
             <li><strong>Total Children:</strong> {stats.totalChildren}</li>
@@ -31,8 +28,7 @@ export default function AdminDashboard() {
           </ul>
         </section>
 
-        {/* Staff Management */}
-        <section style={{ marginBottom: '2rem' }}>
+        <section>
           <h3>Staff List</h3>
           <ul>
             {staffList.map((staff, index) => (
@@ -41,7 +37,6 @@ export default function AdminDashboard() {
           </ul>
         </section>
 
-        {/* Enrollment Tracking Placeholder */}
         <section>
           <h3>Enrollment Tracking</h3>
           <p>Feature coming soon: View and manage child enrollment records.</p>
