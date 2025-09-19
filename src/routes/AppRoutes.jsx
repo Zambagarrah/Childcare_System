@@ -6,6 +6,7 @@ import ParentDashboard from '../components/Dashboard/ParentDashboard';
 import CaregiverDashboard from '../components/Dashboard/CaregiverDashboard';
 import AdminDashboard from '../components/Dashboard/AdminDashboard';
 import ChildProfile from '../components/ChildProfile/ChildProfile';
+import Attendance from '../components/Attendance/Attendance';
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
         <Route path="/caregiver-dashboard" element={<CaregiverDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/child-profile" element={<ChildProfile />} />
+        <Route path="/attendance" element={<Attendance />} />
       </Routes>
     </Router>
   );
