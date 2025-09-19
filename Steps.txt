@@ -36,3 +36,7 @@ Step 19: Add Route for Attendance
 Step 20: Link from Caregiver Dashboard
 Step 21: Create Navbar.jsx Component
 Step 22: Add Navbar to Dashboards
+Step 23: Worked on the styling 
+    Created a global CSS File
+    Apply Global Styles
+    Test Styling Across Pages
