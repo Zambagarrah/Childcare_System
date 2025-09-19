@@ -18,6 +18,9 @@ export default function ParentDashboard() {
         <h3>Child Profile</h3>
         <p><strong>Name:</strong> {childData.name}</p>
         <p><strong>Age:</strong> {childData.age} years</p>
+        <a href="/child-profile">
+          <button>View / Edit Profile</button>
+        </a>
       </section>
 
       {/* Attendance Log */}
