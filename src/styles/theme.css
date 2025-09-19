@@ -1,0 +1,28 @@
+:root {
+  --color-primary: #4CAF50;
+  --color-accent: #81D4FA;
+  --color-bg: #F5F5F5;
+  --color-text: #333333;
+  --color-warning: #FFC107;
+  --color-success: #C8E6C9;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #388E3C;
+}
