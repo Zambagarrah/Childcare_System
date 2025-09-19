@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
 
 // Dummy data for demonstration
 const stats = {
@@ -15,34 +16,37 @@ const staffList = [
 
 export default function AdminDashboard() {
   return (
-    <main style={{ padding: '2rem' }}>
-      <h2>Admin Dashboard</h2>
+    <>
+      <Navbar role="admin" />
+      <main style={{ padding: '2rem' }}>
+        <h2>Admin Dashboard</h2>
 
-      {/* Center-wide Stats */}
-      <section style={{ marginBottom: '2rem' }}>
-        <h3>Center Overview</h3>
-        <ul>
-          <li><strong>Total Children:</strong> {stats.totalChildren}</li>
-          <li><strong>Total Caregivers:</strong> {stats.totalCaregivers}</li>
-          <li><strong>Attendance Today:</strong> {stats.attendanceToday}</li>
-        </ul>
-      </section>
+        {/* Center-wide Stats */}
+        <section style={{ marginBottom: '2rem' }}>
+          <h3>Center Overview</h3>
+          <ul>
+            <li><strong>Total Children:</strong> {stats.totalChildren}</li>
+            <li><strong>Total Caregivers:</strong> {stats.totalCaregivers}</li>
+            <li><strong>Attendance Today:</strong> {stats.attendanceToday}</li>
+          </ul>
+        </section>
 
-      {/* Staff Management */}
-      <section style={{ marginBottom: '2rem' }}>
-        <h3>Staff List</h3>
-        <ul>
-          {staffList.map((staff, index) => (
-            <li key={index}>{staff.name} — {staff.role}</li>
-          ))}
-        </ul>
-      </section>
+        {/* Staff Management */}
+        <section style={{ marginBottom: '2rem' }}>
+          <h3>Staff List</h3>
+          <ul>
+            {staffList.map((staff, index) => (
+              <li key={index}>{staff.name} — {staff.role}</li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Enrollment Tracking Placeholder */}
-      <section>
-        <h3>Enrollment Tracking</h3>
-        <p>Feature coming soon: View and manage child enrollment records.</p>
-      </section>
-    </main>
+        {/* Enrollment Tracking Placeholder */}
+        <section>
+          <h3>Enrollment Tracking</h3>
+          <p>Feature coming soon: View and manage child enrollment records.</p>
+        </section>
+      </main>
+    </>
   );
 }
