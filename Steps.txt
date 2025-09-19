@@ -34,3 +34,5 @@ Step 18: Create Attendance Component
     Saves status in localStorage
 Step 19: Add Route for Attendance
 Step 20: Link from Caregiver Dashboard
+Step 21: Create Navbar.jsx Component
+Step 22: Add Navbar to Dashboards
