@@ -7,6 +7,7 @@ import CaregiverDashboard from '../components/Dashboard/CaregiverDashboard';
 import AdminDashboard from '../components/Dashboard/AdminDashboard';
 import ChildProfile from '../components/ChildProfile/ChildProfile';
 import Attendance from '../components/Attendance/Attendance';
+import Messaging from '../components/Messaging/Messaging';
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ export default function AppRoutes() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/child-profile" element={<ChildProfile />} />
         <Route path="/attendance" element={<Attendance />} />
+        <Route path="/messaging" element={<Messaging />} />
       </Routes>
     </Router>
   );
