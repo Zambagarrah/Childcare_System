@@ -10,8 +10,14 @@ export default function Login() {
     const user = JSON.parse(localStorage.getItem(username));
     if (user && user.password === password) {
       alert(`Welcome, ${user.role}!`);
-      window.location.href = '/parent-dashboard';
-      window.location.href = '/caregiver-dashboard';
+      // Redirect based on role
+      if (user.role === 'parent') {
+        window.location.href = '/parent-dashboard';
+      } else if (user.role === 'caregiver') {
+        window.location.href = '/caregiver-dashboard';
+      } else if (user.role === 'admin') {
+        window.location.href = '/admin-dashboard';
+      }
     } else {
       alert('Invalid credentials.');
     }
