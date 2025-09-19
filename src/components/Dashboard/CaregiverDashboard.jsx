@@ -52,6 +52,9 @@ export default function CaregiverDashboard() {
                 placeholder="e.g. sleepy, energetic"
               />
             </label>
+            <a href="/attendance">
+              <button>Open Attendance Tracker</button>
+            </a>
           </div>
         ))}
       </section>
