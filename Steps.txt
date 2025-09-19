@@ -6,3 +6,31 @@ Step 4: Set Up Routing
 Step 5: Home Page
     Welcomes users with mission statement and CTA
     Links to Register page
+Step 6: Auth Components (Login + Register)
+    Allows users to register and login by role
+    Stores credentials in localStorage 
+Step 7: Create Parent Dashboard Component
+    Sets up a role-specific dashboard for parents
+    Prepares layout for child info, attendance, and messaging
+Step 8: Add Route for Parent Dashboard
+Step 9: Test Navigation Flow
+Step 10: Create Caregiver Dashboard Component
+    Displays a list of children assigned to the caregiver
+    Allows marking attendance and adding health notes
+Step 11: Add Route for Caregiver Dashboard
+Step 12: Redirect login to CaregiverDashboard for demo purposes
+Step 13: Create Admin Dashboard Component
+    Displays system-wide overview for administrators
+    Prepares layout for staff and enrollment modules
+Step 14: Add Route for Admin Dashboard
+Step 15: Create Child Profile Component
+    Displays and edits child details
+    Stores updates in localStorage (demo only)
+Step 16: Add Route for Child Profile
+Step 17: Link from Parent Dashboard
+Step 18: Create Attendance Component
+    Displays a weekly attendance grid
+    Allows caregivers to mark check-in/check-out
+    Saves status in localStorage
+Step 19: Add Route for Attendance
+Step 20: Link from Caregiver Dashboard
