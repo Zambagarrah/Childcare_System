@@ -53,6 +53,7 @@ export default function CaregiverDashboard() {
               </label>
             </div>
           ))}
+    
           <a href="/attendance">
             <button>Open Attendance Tracker</button>
           </a>
