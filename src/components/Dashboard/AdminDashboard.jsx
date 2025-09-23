@@ -9,7 +9,7 @@ const stats = {
 const staffList = [
   { name: 'Ms. Wanjiku', role: 'Caregiver' },
   { name: 'Mr. Otieno', role: 'Caregiver' },
-  { name: 'Admin Zablon', role: 'Administrator' },
+  { name: 'Admin Zabby', role: 'Administrator' },
 ];
 
 export default function AdminDashboard() {
@@ -41,6 +41,9 @@ export default function AdminDashboard() {
           <h3>Enrollment Tracking</h3>
           <p>Feature coming soon: View and manage child enrollment records.</p>
         </section>
+        <a href="/reports">
+          <button>View Reports</button>
+        </a>
       </main>
     </>
   );
