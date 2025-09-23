@@ -1,4 +1,5 @@
 import Navbar from '../Navbar/Navbar';
+import Card from '../UI/Card';
 
 const childData = {
   name: 'Amani Njeri',
@@ -14,38 +15,38 @@ export default function ParentDashboard() {
       <main>
         <h2 style={{ color: 'var(--color-primary)' }}>Parent Dashboard</h2>
 
-        <section>
-          <h3>Child Profile</h3>
+        <Card title="Child Profile">
           <p><strong>Name:</strong> {childData.name}</p>
           <p><strong>Age:</strong> {childData.age} years</p>
           <a href="/child-profile">
             <button>View / Edit Profile</button>
           </a>
-        </section>
+        </Card>
 
-        <section>
-          <h3>Attendance This Week</h3>
+        <Card title="Attendance This Week">
           <ul>
             {childData.attendance.map((day, index) => (
               <li key={index}>{day}</li>
             ))}
           </ul>
-        </section>
+        </Card>
 
-        <section>
-          <h3>Messages from Caregiver</h3>
+        <Card title="Messages from Caregiver">
           <ul>
             {childData.messages.map((msg, index) => (
               <li key={index}>{msg}</li>
             ))}
           </ul>
-        </section>
-        <a href="/attendance">
-          <button>Open Attendance Tracker</button>
-        </a>
-        <a href="/billing">
-          <button>View Billing</button>
-        </a>
+          <a href="/messaging">
+            <button>Open Messaging Center</button>
+          </a>
+        </Card>
+
+        <Card title="Billing">
+          <a href="/billing">
+            <button>View Billing</button>
+          </a>
+        </Card>
       </main>
     </>
   );
