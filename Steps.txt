@@ -40,3 +40,27 @@ Step 23: Worked on the styling
     Created a global CSS File
     Apply Global Styles
     Test Styling Across Pages
+Step 24: Create Messaging Component
+Step 25: Add Route for Messaging
+Step 26: Link from Dashboards
+Step 27: Create Billing Component
+    A working Billing module with:
+    Invoice history and payment status
+    Placeholder for future payment integration
+    Role-aware layout and styling
+Step 28: Add Route for Billing
+Step 29: Link from Parent Dashboard
+Step 30: Create Reports Component
+Step 31: Add Route for Reports
+Step 32: Link from Admin Dashboard
+    A working Reports module with:
+    Attendance filtering
+    Enrollment overview
+    Export placeholder
+Step 33: Created a reusable card Component
+    To unify layout across modules like Child Profile, Attendance, Messaging, and Reports.
+Step 34: Refactor Parent Dashboard to Use Cards
+Step 35: Apply Card to Other Modules
+Step 36: Create Sidebar.jsx Component
+Step 37: Create Sidebar.jsx Component
+Step 38: Refactor Dashboards to Use Sidebar Layout
