@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import DashboardLayout from '../UI/DashboardLayout';
 import Card from '../UI/Card';
 
 const initialRoster = [
@@ -24,46 +24,43 @@ export default function CaregiverDashboard() {
   };
 
   return (
-    <>
-      <Navbar role="caregiver" />
-      <main>
-        <h2 style={{ color: 'var(--color-primary)' }}>Caregiver Dashboard</h2>
+    <DashboardLayout role="caregiver">
+      <h2 style={{ color: 'var(--color-primary)' }}>Caregiver Dashboard</h2>
 
-        <Card title="Today's Class">
-          {roster.map((child, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <p><strong>Name:</strong> {child.name}</p>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={child.present}
-                  onChange={() => toggleAttendance(index)}
-                />
-                Present
-              </label>
-              <br />
-              <label>
-                Health Notes:
-                <input
-                  type="text"
-                  value={child.notes}
-                  onChange={(e) => updateNotes(index, e.target.value)}
-                  placeholder="e.g. sleepy, energetic"
-                />
-              </label>
-            </div>
-          ))}
-        </Card>
+      <Card title="Today's Class">
+        {roster.map((child, index) => (
+          <div key={index} style={{ marginBottom: '1rem' }}>
+            <p><strong>Name:</strong> {child.name}</p>
+            <label>
+              <input
+                type="checkbox"
+                checked={child.present}
+                onChange={() => toggleAttendance(index)}
+              />
+              Present
+            </label>
+            <br />
+            <label>
+              Health Notes:
+              <input
+                type="text"
+                value={child.notes}
+                onChange={(e) => updateNotes(index, e.target.value)}
+                placeholder="e.g. sleepy, energetic"
+              />
+            </label>
+          </div>
+        ))}
+      </Card>
 
-        <Card title="Tools">
-          <a href="/attendance">
-            <button>Open Attendance Tracker</button>
-          </a>
-          <a href="/messaging">
-            <button>Open Messaging Center</button>
-          </a>
-        </Card>
-      </main>
-    </>
+      <Card title="Tools">
+        <a href="/attendance">
+          <button>Open Attendance Tracker</button>
+        </a>
+        <a href="/messaging">
+          <button>Open Messaging Center</button>
+        </a>
+      </Card>
+    </DashboardLayout>
   );
 }
