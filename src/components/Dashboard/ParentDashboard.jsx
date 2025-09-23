@@ -43,6 +43,9 @@ export default function ParentDashboard() {
         <a href="/attendance">
           <button>Open Attendance Tracker</button>
         </a>
+        <a href="/billing">
+          <button>View Billing</button>
+        </a>
       </main>
     </>
   );
