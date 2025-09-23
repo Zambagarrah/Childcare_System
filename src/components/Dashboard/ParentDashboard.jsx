@@ -40,6 +40,9 @@ export default function ParentDashboard() {
             ))}
           </ul>
         </section>
+        <a href="/attendance">
+          <button>Open Attendance Tracker</button>
+        </a>
       </main>
     </>
   );
