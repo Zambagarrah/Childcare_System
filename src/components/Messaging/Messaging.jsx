@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Card from '../UI/Card';
 
-// Dummy thread for demonstration
 const initialThread = [
   { sender: 'Caregiver', text: 'Amani had a great day today!' },
   { sender: 'Parent', text: 'Thank you! Did she nap well?' },
@@ -11,13 +11,11 @@ export default function Messaging({ role = 'parent' }) {
   const [thread, setThread] = useState(initialThread);
   const [reply, setReply] = useState('');
 
-  // Load saved thread from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('messageThread');
     if (saved) setThread(JSON.parse(saved));
   }, []);
 
-  // Handle reply submission
   const sendReply = (e) => {
     e.preventDefault();
     const newMessage = { sender: role.charAt(0).toUpperCase() + role.slice(1), text: reply };
@@ -33,8 +31,7 @@ export default function Messaging({ role = 'parent' }) {
       <main>
         <h2 style={{ color: 'var(--color-primary)' }}>Messaging Center</h2>
 
-        {/* Message Thread */}
-        <section style={{ marginBottom: '2rem' }}>
+        <Card title="Conversation">
           {thread.map((msg, index) => (
             <div key={index} style={{
               backgroundColor: msg.sender === 'Parent' ? 'var(--color-accent)' : 'var(--color-success)',
@@ -45,18 +42,19 @@ export default function Messaging({ role = 'parent' }) {
               <strong>{msg.sender}:</strong> {msg.text}
             </div>
           ))}
-        </section>
+        </Card>
 
-        {/* Reply Box */}
-        <form onSubmit={sendReply}>
-          <textarea
-            value={reply}
-            onChange={(e) => setReply(e.target.value)}
-            placeholder="Type your message..."
-            required
-          />
-          <button type="submit">Send</button>
-        </form>
+        <Card title="Reply">
+          <form onSubmit={sendReply}>
+            <textarea
+              value={reply}
+              onChange={(e) => setReply(e.target.value)}
+              placeholder="Type your message..."
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
+        </Card>
       </main>
     </>
   );

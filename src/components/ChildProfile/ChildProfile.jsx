@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Navbar from '../Navbar/Navbar';
+import Card from '../UI/Card';
 
-// Load saved profile from localStorage or use default
 const defaultProfile = {
   name: 'Amani Njeri',
   age: 4,
@@ -23,47 +24,45 @@ export default function ChildProfile() {
   };
 
   return (
-    <main style={{ padding: '2rem' }}>
-      <h2>Child Profile</h2>
+    <>
+      <Navbar role="parent" />
+      <main>
+        <h2 style={{ color: 'var(--color-primary)' }}>Child Profile</h2>
 
-      {/* Editable Fields */}
-      <label>
-        Name:
-        <input
-          type="text"
-          value={profile.name}
-          onChange={(e) => handleChange('name', e.target.value)}
-        />
-      </label>
-      <br />
-
-      <label>
-        Age:
-        <input
-          type="number"
-          value={profile.age}
-          onChange={(e) => handleChange('age', e.target.value)}
-        />
-      </label>
-      <br />
-
-      <label>
-        Health Status:
-        <input
-          type="text"
-          value={profile.health}
-          onChange={(e) => handleChange('health', e.target.value)}
-        />
-      </label>
-      <br />
-
-      <label>
-        Development Milestones:
-        <textarea
-          value={profile.milestones}
-          onChange={(e) => handleChange('milestones', e.target.value)}
-        />
-      </label>
-    </main>
+        <Card>
+          <label>
+            Name:
+            <input
+              type="text"
+              value={profile.name}
+              onChange={(e) => handleChange('name', e.target.value)}
+            />
+          </label>
+          <label>
+            Age:
+            <input
+              type="number"
+              value={profile.age}
+              onChange={(e) => handleChange('age', e.target.value)}
+            />
+          </label>
+          <label>
+            Health Status:
+            <input
+              type="text"
+              value={profile.health}
+              onChange={(e) => handleChange('health', e.target.value)}
+            />
+          </label>
+          <label>
+            Development Milestones:
+            <textarea
+              value={profile.milestones}
+              onChange={(e) => handleChange('milestones', e.target.value)}
+            />
+          </label>
+        </Card>
+      </main>
+    </>
   );
 }

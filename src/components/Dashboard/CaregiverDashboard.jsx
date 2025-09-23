@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Card from '../UI/Card';
 
 const initialRoster = [
   { name: 'Amani Njeri', present: false, notes: '' },
@@ -28,8 +29,7 @@ export default function CaregiverDashboard() {
       <main>
         <h2 style={{ color: 'var(--color-primary)' }}>Caregiver Dashboard</h2>
 
-        <section>
-          <h3>Today's Class</h3>
+        <Card title="Today's Class">
           {roster.map((child, index) => (
             <div key={index} style={{ marginBottom: '1rem' }}>
               <p><strong>Name:</strong> {child.name}</p>
@@ -53,11 +53,16 @@ export default function CaregiverDashboard() {
               </label>
             </div>
           ))}
-    
+        </Card>
+
+        <Card title="Tools">
           <a href="/attendance">
             <button>Open Attendance Tracker</button>
           </a>
-        </section>
+          <a href="/messaging">
+            <button>Open Messaging Center</button>
+          </a>
+        </Card>
       </main>
     </>
   );
