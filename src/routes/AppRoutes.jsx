@@ -8,6 +8,7 @@ import AdminDashboard from '../components/Dashboard/AdminDashboard';
 import ChildProfile from '../components/ChildProfile/ChildProfile';
 import Attendance from '../components/Attendance/Attendance';
 import Messaging from '../components/Messaging/Messaging';
+import Billing from '../components/Billing/Billing';
 
 export default function AppRoutes() {
   return (
@@ -22,6 +23,7 @@ export default function AppRoutes() {
         <Route path="/child-profile" element={<ChildProfile />} />
         <Route path="/attendance" element={<Attendance />} />
         <Route path="/messaging" element={<Messaging />} />
+        <Route path="/billing" element={<Billing role="parent" />} />
       </Routes>
     </Router>
   );
