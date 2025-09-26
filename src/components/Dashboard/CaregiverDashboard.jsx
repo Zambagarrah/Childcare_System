@@ -29,7 +29,7 @@ export default function CaregiverDashboard() {
       <div className="dashboard-container">
         <h2>Caregiver Dashboard</h2>
 
-        <Card title="Today's Class">
+        <Card title={<><FaUserNurse /> Today's Class</>}>
           {roster.map((child, index) => (
             <div key={index} style={{ marginBottom: '1rem' }}>
               <p><strong>Name:</strong> {child.name}</p>
@@ -54,10 +54,12 @@ export default function CaregiverDashboard() {
           ))}
         </Card>
 
-        <Card title="Tools">
+        <Card title={<><FaClipboardCheck /> Tools</>}>
           <a href="/attendance">
             <button>Open Attendance Tracker</button>
           </a>
+        </Card>
+        <Card title={<><FaComments /> Messaging</>}>
           <a href="/messaging">
             <button>Open Messaging Center</button>
           </a>

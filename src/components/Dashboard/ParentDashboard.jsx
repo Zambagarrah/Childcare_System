@@ -1,3 +1,4 @@
+import { FaChild, FaClipboardList, FaComments, FaMoneyBillWave } from 'react-icons/fa';
 import DashboardLayout from '../UI/DashboardLayout';
 import Card from '../UI/Card';
 import '../../styles/dashboard.css';
@@ -15,15 +16,14 @@ export default function ParentDashboard() {
       <div className="dashboard-container">
         <h2>Parent Dashboard</h2>
 
-        <Card title="Child Profile">
-          <p><strong>Name:</strong> {childData.name}</p>
+        <Card title={<><FaChild /> Child Profile</>}>          <p><strong>Name:</strong> {childData.name}</p>
           <p><strong>Age:</strong> {childData.age} years</p>
           <a href="/child-profile">
             <button>View / Edit Profile</button>
           </a>
         </Card>
 
-        <Card title="Attendance This Week">
+        <Card title={<><FaClipboardList /> Attendance This Week</>}>
           <ul>
             {childData.attendance.map((day, index) => (
               <li key={index}>{day}</li>
@@ -31,7 +31,7 @@ export default function ParentDashboard() {
           </ul>
         </Card>
 
-        <Card title="Messages from Caregiver">
+        <Card title={<><FaComments /> Messages from Caregiver</>}>
           <ul>
             {childData.messages.map((msg, index) => (
               <li key={index}>{msg}</li>
@@ -42,7 +42,7 @@ export default function ParentDashboard() {
           </a>
         </Card>
 
-        <Card title="Billing">
+        <Card title={<><FaMoneyBillWave /> Billing</>}>
           <a href="/billing">
             <button>View Billing</button>
           </a>
