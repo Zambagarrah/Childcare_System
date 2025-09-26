@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DashboardLayout from '../UI/DashboardLayout';
 import Card from '../UI/Card';
+import '../../styles/dashboard.css';
 
 const initialRoster = [
   { name: 'Amani Njeri', present: false, notes: '' },
@@ -25,42 +26,43 @@ export default function CaregiverDashboard() {
 
   return (
     <DashboardLayout role="caregiver">
-      <h2 style={{ color: 'var(--color-primary)' }}>Caregiver Dashboard</h2>
+      <div className="dashboard-container">
+        <h2>Caregiver Dashboard</h2>
 
-      <Card title="Today's Class">
-        {roster.map((child, index) => (
-          <div key={index} style={{ marginBottom: '1rem' }}>
-            <p><strong>Name:</strong> {child.name}</p>
-            <label>
-              <input
-                type="checkbox"
-                checked={child.present}
-                onChange={() => toggleAttendance(index)}
-              />
-              Present
-            </label>
-            <br />
-            <label>
-              Health Notes:
-              <input
-                type="text"
-                value={child.notes}
-                onChange={(e) => updateNotes(index, e.target.value)}
-                placeholder="e.g. sleepy, energetic"
-              />
-            </label>
-          </div>
-        ))}
-      </Card>
+        <Card title="Today's Class">
+          {roster.map((child, index) => (
+            <div key={index} style={{ marginBottom: '1rem' }}>
+              <p><strong>Name:</strong> {child.name}</p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={child.present}
+                  onChange={() => toggleAttendance(index)}
+                />
+                Present
+              </label>
+              <label>
+                Health Notes:
+                <input
+                  type="text"
+                  value={child.notes}
+                  onChange={(e) => updateNotes(index, e.target.value)}
+                  placeholder="e.g. sleepy, energetic"
+                />
+              </label>
+            </div>
+          ))}
+        </Card>
 
-      <Card title="Tools">
-        <a href="/attendance">
-          <button>Open Attendance Tracker</button>
-        </a>
-        <a href="/messaging">
-          <button>Open Messaging Center</button>
-        </a>
-      </Card>
+        <Card title="Tools">
+          <a href="/attendance">
+            <button>Open Attendance Tracker</button>
+          </a>
+          <a href="/messaging">
+            <button>Open Messaging Center</button>
+          </a>
+        </Card>
+      </div>
     </DashboardLayout>
   );
 }
