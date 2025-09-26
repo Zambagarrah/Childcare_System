@@ -1,15 +1,24 @@
+import '../../styles/home.css';
+
 export default function Home() {
   return (
-    <main>
-      <h1 style={{ color: 'var(--color-primary)', marginBottom: '1rem' }}>
-        Marianna Childcare System
-      </h1>
-      <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-        Empowering parents, caregivers, and administrators with care and clarity.
+    <div className="home-container">
+      <h1>Marianna Childcare System</h1>
+      <p>
+        Welcome to a platform built for care, clarity, and connection. Whether you're a parent, caregiver, or administrator, Marianna helps you support every child’s journey.
       </p>
-      <a href="/register">
-        <button>Get Started</button>
-      </a>
-    </main>
+
+      <div className="role-buttons">
+        <a href="/register">
+          <button>I'm a Parent</button>
+        </a>
+        <a href="/register">
+          <button>I'm a Caregiver</button>
+        </a>
+        <a href="/register">
+          <button>I'm an Administrator</button>
+        </a>
+      </div>
+    </div>
   );
 }
