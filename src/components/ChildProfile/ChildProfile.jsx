@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import Navbar from '../Navbar/Navbar';
+import DashboardLayout from '../UI/DashboardLayout';
 import Card from '../UI/Card';
+import '../../styles/dashboard.css';
 
 const defaultProfile = {
   name: 'Amani Njeri',
@@ -24,10 +25,9 @@ export default function ChildProfile() {
   };
 
   return (
-    <>
-      <Navbar role="parent" />
-      <main>
-        <h2 style={{ color: 'var(--color-primary)' }}>Child Profile</h2>
+    <DashboardLayout role="parent">
+      <div className="dashboard-container">
+        <h2>Child Profile</h2>
 
         <Card>
           <label>
@@ -62,7 +62,7 @@ export default function ChildProfile() {
             />
           </label>
         </Card>
-      </main>
-    </>
+      </div>
+    </DashboardLayout>
   );
 }

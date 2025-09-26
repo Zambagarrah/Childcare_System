@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import Navbar from '../Navbar/Navbar';
+import DashboardLayout from '../UI/DashboardLayout';
 import Card from '../UI/Card';
+import '../../styles/dashboard.css';
 
 const initialThread = [
   { sender: 'Caregiver', text: 'Amani had a great day today!' },
@@ -26,10 +27,9 @@ export default function Messaging({ role = 'parent' }) {
   };
 
   return (
-    <>
-      <Navbar role={role} />
-      <main>
-        <h2 style={{ color: 'var(--color-primary)' }}>Messaging Center</h2>
+    <DashboardLayout role={role}>
+      <div className="dashboard-container">
+        <h2>Messaging Center</h2>
 
         <Card title="Conversation">
           {thread.map((msg, index) => (
@@ -55,7 +55,7 @@ export default function Messaging({ role = 'parent' }) {
             <button type="submit">Send</button>
           </form>
         </Card>
-      </main>
-    </>
+      </div>
+    </DashboardLayout>
   );
 }

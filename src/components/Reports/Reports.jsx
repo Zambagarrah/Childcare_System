@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import DashboardLayout from '../UI/DashboardLayout';
 import Card from '../UI/Card';
+import '../../styles/dashboard.css';
 
-// Dummy report data for demonstration
 const reportData = [
   { child: 'Amani Njeri', attendance: '90%', enrolled: true },
   { child: 'Brian Otieno', attendance: '80%', enrolled: true },
@@ -12,7 +12,6 @@ const reportData = [
 export default function Reports({ role = 'admin' }) {
   const [filter, setFilter] = useState('all');
 
-  // Filter logic based on attendance percentage
   const filtered = reportData.filter((entry) => {
     const percent = parseInt(entry.attendance);
     if (filter === 'high') return percent >= 90;
@@ -21,12 +20,10 @@ export default function Reports({ role = 'admin' }) {
   });
 
   return (
-    <>
-      <Navbar role={role} />
-      <main>
-        <h2 style={{ color: 'var(--color-primary)' }}>Reports & Analytics</h2>
+    <DashboardLayout role={role}>
+      <div className="dashboard-container">
+        <h2>Reports & Analytics</h2>
 
-        {/* Filter Controls */}
         <Card title="Filter Attendance">
           <label>
             Show:
@@ -38,7 +35,6 @@ export default function Reports({ role = 'admin' }) {
           </label>
         </Card>
 
-        {/* Attendance Summary Table */}
         <Card title="Attendance Summary">
           <table>
             <thead>
@@ -60,11 +56,10 @@ export default function Reports({ role = 'admin' }) {
           </table>
         </Card>
 
-        {/* Export Placeholder */}
         <Card title="Export Reports">
           <p>Feature coming soon: Export data to Excel or PDF for offline analysis and sharing.</p>
         </Card>
-      </main>
-    </>
+      </div>
+    </DashboardLayout>
   );
 }
